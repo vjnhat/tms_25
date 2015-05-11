@@ -1,0 +1,10 @@
+<% provide :title, 'All Courses' %>
+<h1> All Courses </h1>
+<%= will_paginate %>
+<ul class="courses" >
+  <% @courses.each do |course| %>
+    <%= render course %>
+    <%= link_to "view", supervisor_course_path(course) %>
+  <% end %>
+</ul>
+<%= will_paginate %>
