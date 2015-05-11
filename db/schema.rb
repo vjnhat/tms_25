@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150508043050) do
+ActiveRecord::Schema.define(version: 20150508075528) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "course_code"
     t.string   "name"
-    t.text     "instrucion"
+    t.text     "instruction"
+    t.integer  "creator_id"
     t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at",  null: false
@@ -63,8 +64,9 @@ ActiveRecord::Schema.define(version: 20150508043050) do
     t.string   "email"
     t.string   "password"
     t.boolean  "supervisor"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
 
 end
