@@ -21,3 +21,11 @@
 
 en:
   hello: "Hello world"
+  user_created: "User created!"
+  user_deleted: "User deleted!"
+  confirm_notification: "Are you sure?"
+  delete_link: "Delete"
+  edit_user: "Edit user"
+  new_user: "New user"
+  all_users: "All users"
+  error: "error"
