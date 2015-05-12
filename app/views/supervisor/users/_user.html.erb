@@ -1,0 +1,6 @@
+<li>
+  <%= gravatar_for user, size: 50 %>
+  <%= link_to user.name, supervisor_user_path user %>
+  | <%= link_to t(:delete_link), supervisor_user_path user, method: :delete,
+                                data: {confirm: t(:confirm_notification)} %>
+</li>
