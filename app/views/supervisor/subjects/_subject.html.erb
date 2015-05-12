@@ -1,0 +1,8 @@
+<li>
+  <h4><%= link_to subject.name, subject%></h4>
+  <%= subject.start_date %>
+  <%= subject.end_date %>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words subject.created_at %> ago.
+  </span>
+</li>
