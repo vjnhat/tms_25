@@ -20,12 +20,20 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
   user_created: "User created!"
   user_deleted: "User deleted!"
-  confirm_notification: "Are you sure?"
-  delete_link: "Delete"
   edit_user: "Edit user"
   new_user: "New user"
   all_users: "All users"
+
+  new_subject: "New subject"
+  edit_subject: "Edit subject"
+  subject_created: "Subject created"
+  name: "Compose new name"
+  instruction: "Compose new instruction"
+  start_date: "Compose start date"
+  end_date: "Compose end date"
+
+  confirm_notification: "Are you sure?"
+  delete_link: "Delete"
   error: "error"
