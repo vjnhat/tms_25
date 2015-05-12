@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
 
   namespace :supervisor do
-    resources :users
     root 'users#index'
+    resources :users
   end
 end

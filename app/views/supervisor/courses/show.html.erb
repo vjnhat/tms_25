@@ -1,0 +1,4 @@
+<%= render @course %>
+<%= link_to "delete", supervisor_course_path,
+  method: :delete, data: {confirm: t(:confirm_notification)} %>
+<%= link_to "edit", edit_supervisor_course_path %> 

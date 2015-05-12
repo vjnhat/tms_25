@@ -20,7 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
   user_created: "User created!"
   user_deleted: "User deleted!"
   confirm_notification: "Are you sure?"
