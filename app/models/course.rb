@@ -1,4 +1,7 @@
 class Course < ActiveRecord::Base
+  has_many :subject_courses
+  has_many :subjects, through: :subject_courses
+  
   validates :name, presence:true, length: {maximum: 50}
   
   before_save :generate_code
