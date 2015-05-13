@@ -1,11 +1,14 @@
 class Course < ActiveRecord::Base
-  has_many :subject_courses
-  has_many :subjects, through: :subject_courses
-  
+  has_many :course_subjects, dependent: :destroy
+  has_many :subjects, through: :course_subjects
+
   validates :name, presence:true, length: {maximum: 50}
   
   before_save :generate_code
 
+  accepts_nested_attributes_for :subjects
+  accepts_nested_attributes_for :course_subjects
+  
   private
   def generate_code
     string = self.name.split(" ")

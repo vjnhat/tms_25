@@ -13,6 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20150512092721) do
 
+  create_table "course_subjects", force: :cascade do |t|
+    t.integer  "subject_id"
+    t.integer  "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "course_subjects", ["course_id"], name: "index_course_subjects_on_course_id"
+  add_index "course_subjects", ["subject_id", "course_id"], name: "index_course_subjects_on_subject_id_and_course_id", unique: true
+  add_index "course_subjects", ["subject_id"], name: "index_course_subjects_on_subject_id"
+
   create_table "courses", force: :cascade do |t|
     t.string   "course_code"
     t.string   "name"
@@ -22,13 +33,6 @@ ActiveRecord::Schema.define(version: 20150512092721) do
     t.datetime "end_date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "subject_courses", force: :cascade do |t|
-    t.integer  "subject_id"
-    t.integer  "course_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "subjects", force: :cascade do |t|

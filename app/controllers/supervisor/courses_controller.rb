@@ -26,21 +26,24 @@ class Supervisor::CoursesController < ApplicationController
   end
 
   def update
-    @course = Course.find_by params[:id]
-    @course.update_attributes course_params
-    flash[:success] = "Course updated"
-    redirect_to supervisor_course_path @course
+    @course = Course.find params[:id]
+    if @course.update_attributes course_params
+      flash[:success] = t(:success)
+      redirect_to supervisor_course_path @course
+    else
+      flash[:danger] = t(:unsuccess)
+      redirect_to suppervisor_courses_path
+    end
   end
 
   def destroy
-    Course.find_by(params[:id]).destroy
-    flash[:success] = "Course deleted"
+    Course.find (params[:id]).destroy
+    flash[:success] = t(:success)
     redirect_to supervisor_courses_path
   end
   
   private
   def course_params
-    params.require(:course).permit :name, :instruction
+    params.require(:course).permit :name, :instruction, subject_ids: []
   end
-  
 end

@@ -1,6 +1,6 @@
-class CreateSubjectCourses < ActiveRecord::Migration
+class CreateCourseSubjects < ActiveRecord::Migration
   def change
-    create_table :subject_courses do |t|
+    create_table :course_subjects do |t|
       t.integer :subject_id
       t.integer :course_id
       t.references :subject, index:true, foreign_key: true
@@ -8,6 +8,6 @@ class CreateSubjectCourses < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_index :subjectcourses, [:subject_id, :course_id], unique: true
+    add_index :course_subjects, [:subject_id, :course_id], unique: true
   end
 end

@@ -1,17 +1,17 @@
-<%= form_for [:supervisor, @course]  do |f| %>
+<%= simple_form_for [:supervisor, @course]  do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.input :name %>
+  <%= f.input :instruction %>
+  <%= f.input :start_date, label: t(:start_end_date) do %>
+    <div class="row">
+      <%= f.input_field :start_date, class: "col-md-2" %>
+    </div>
+    <div class="row">
+      <%= f.input_field :end_date, class: "col-md-2" %>
+    </div>
+  <% end %>
+  <%= f.collection_check_boxes :subject_ids, Subject.all, :id, :name %>
   
-  <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-control' %>
-
-  <%= f.label :instruction %>
-  <%= f.text_area :instruction, class: 'form-control' %>
-
-  <%= f.label :start_date %>
-  <%= f.datetime_field :start_date, class: 'form-control' %>
-
-  <%= f.label :end_date %>
-  <%= f.datetime_field :end_date, class: 'form-control' %>
-
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end  %>
+  <%= f.button :submit %>
+<% end %>

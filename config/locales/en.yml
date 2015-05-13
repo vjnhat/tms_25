@@ -49,3 +49,7 @@ en:
   remember_me: "Remember me?"
   new_course: "New course"
   show_courses: "All courses"
+  edit_link: "Edit"
+  start_end_date: "Start/End date"
+  success: "Success"
+  fail: "Unsuccess"
