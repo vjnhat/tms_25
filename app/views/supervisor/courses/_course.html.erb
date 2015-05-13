@@ -1,0 +1,10 @@
+<li id="course-<%= course.id %>">
+  <span class="course_code"><%= course.course_code %></span>
+  <span class="name"><%= course.name %></span>
+  <span class="name"><%= course.start_date %></span>
+  <span class="name"><%= course.end_date %></span>
+
+  <span class="timestamp">
+    Posted <%= time_ago_in_words course.created_at %> ago.
+  </span>
+</li>

@@ -6,6 +6,14 @@
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Help", '#' %></li>
         <li><%= link_to "Log in", '#' %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Course <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Create a Course", new_supervisor_course_path %></li>
+            <li><%= link_to "Show all Courses", supervisor_courses_path %></li>
+          </ul>
       </ul>
     </nav>
   </div>
