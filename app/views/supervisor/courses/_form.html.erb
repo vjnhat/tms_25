@@ -1,6 +1,5 @@
 <%= simple_form_for [:supervisor, @course]  do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-
   <%= f.input :name %>
   <%= f.input :instruction %>
   <%= f.input :start_date, label: t(:start_end_date) do %>
@@ -12,6 +11,5 @@
     </div>
   <% end %>
   <%= f.collection_check_boxes :subject_ids, Subject.all, :id, :name %>
-  
   <%= f.button :submit %>
 <% end %>

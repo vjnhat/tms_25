@@ -1,8 +1,15 @@
-<li>
-  <h4><%= link_to subject.name, subject%></h4>
-  <%= subject.start_date %>
-  <%= subject.end_date %>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words subject.created_at %> ago.
-  </span>
-</li>
+<div class="panel panel-default">
+  <div class="panel-heading" role="tab" id="headingOne">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#<%= subject.id %>"  aria-expanded="true" aria-controls="collapseOne">
+        <%= subject.name %>
+      </a>
+    </h4>
+  </div>
+  <div id="<%= subject.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+    <div class="panel-body">
+      <%= subject.instruction %>
+      <%= link_to t(:view), supervisor_subject_path(subject) %>
+    </div>
+  </div>
+</div>

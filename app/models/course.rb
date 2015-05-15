@@ -8,7 +8,7 @@ class Course < ActiveRecord::Base
 
   accepts_nested_attributes_for :subjects
   accepts_nested_attributes_for :course_subjects
-  
+
   private
   def generate_code
     string = self.name.split(" ")
