@@ -5,8 +5,12 @@
   <%= f.label :instruction %>
   <%= f.text_area :instruction, class: 'form-control' %>
   <%= f.label :start_date, t(:start_date) %>
-  <%= f.password_field :start_date, class: 'form-control' %>
+  <%= f.text_field :start_date, class: 'form-control' %>
   <%= f.label :end_date, t(:end_date) %>
-  <%= f.password_field :end_date, class: 'form-control' %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
+  <%= f.text_field :end_date, class: 'form-control' %>
+  <%= f.fields_for :tasks do |builder| %>
+    <%= render "task_fields", f: builder %>
+  <% end %>
+  <p><%= link_to_add_fields "Add Task", f, :tasks %></p>
+  <%= f.submit t(:submit), class: "btn btn-primary" %>
 <% end %>

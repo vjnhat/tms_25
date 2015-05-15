@@ -11,8 +11,10 @@ Rails.application.routes.draw do
 
   namespace :supervisor do
     resources :users
-    resources :subjects
     resources :courses
+    resources :subjects do
+      resources :tasks
+    end
     root  'users#index'
   end
 end

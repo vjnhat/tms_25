@@ -1,10 +1,9 @@
 <% provide :title, 'All Courses' %>
 <h1> Subjects </h1>
 <%= will_paginate %>
-<li class="subject">
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <% @subjects.each do |subject| %>
     <%= render subject %>
-    <%= link_to "view", supervisor_subject_path(subject) %>
   <% end %>
-</li>
+</div>
 <%= will_paginate %>
