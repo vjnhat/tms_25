@@ -9,3 +9,11 @@ User.create!(name: "khanhkhanh",
              password: "khanhkhanh",
              password_confirmation: "khanhkhanh",
              supervisor: false)
+
+50.times do |n|
+  Subject.create!(name: "#{n+1} name")
+end
+
+50.times do |n|
+  Course.create!(name: "#{n+1} name")
+end
