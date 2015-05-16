@@ -1,16 +1,23 @@
 <%= form_for [:supervisor, @subject] do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
+  
   <%= f.label :name %>
   <%= f.text_field :name, class: 'form-control' %>
+
   <%= f.label :instruction %>
   <%= f.text_area :instruction, class: 'form-control' %>
+
   <%= f.label :start_date, t(:start_date) %>
   <%= f.text_field :start_date, class: 'form-control' %>
+
   <%= f.label :end_date, t(:end_date) %>
   <%= f.text_field :end_date, class: 'form-control' %>
+
   <%= f.fields_for :tasks do |builder| %>
     <%= render "task_fields", f: builder %>
   <% end %>
-  <p><%= link_to_add_fields "Add Task", f, :tasks %></p>
+
+  <p><%= link_to_add_fields t(:add_task), f, :tasks %></p>
+
   <%= f.submit t(:submit), class: "btn btn-primary" %>
 <% end %>

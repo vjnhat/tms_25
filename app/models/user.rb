@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
 
+  has_many :course_users, dependent: :destroy
+  has_many :courses, through: :course_users
+
+  accepts_nested_attributes_for :course_users, allow_destroy: true
+
   before_save {self.email = email.downcase}
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -11,6 +16,7 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: {minimum: 5},
                        on: :create
   validates :password, confirmation: true, allow_blank: true
+
   has_secure_password
 
   def User.digest(string)

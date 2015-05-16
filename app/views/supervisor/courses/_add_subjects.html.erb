@@ -1,0 +1,4 @@
+<%= f.collection_check_boxes :subject_ids, Subject.all, :id, :name, hide_label: true %>
+<br><br>
+
+<%= f.submit t(:submit), class: "btn btn-primary" %>

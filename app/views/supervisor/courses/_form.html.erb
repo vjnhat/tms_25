@@ -1,15 +1,13 @@
-<%= simple_form_for [:supervisor, @course]  do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <%= f.input :name %>
-  <%= f.input :instruction %>
-  <%= f.input :start_date, label: t(:start_end_date) do %>
-    <div class="row">
-      <%= f.input_field :start_date, class: "col-md-2" %>
-    </div>
-    <div class="row">
-      <%= f.input_field :end_date, class: "col-md-2" %>
-    </div>
-  <% end %>
-  <%= f.collection_check_boxes :subject_ids, Subject.all, :id, :name %>
-  <%= f.button :submit %>
-<% end %>
+<%= f.label :course_code %>
+<%= f.text_field :course_code, class: 'form-control' %>
+
+<%= f.label :name %>
+<%= f.text_field :name, class: 'form-control' %>
+
+<%= f.label :instruction %>
+<%= f.text_area :instruction, class: 'form-control' %>
+
+<%= f.label :creator_id %>
+<%= f.text_area :creator_id, class: 'form-control' %>
+
+<%= f.submit t(:submit), class: "btn btn-primary" %>

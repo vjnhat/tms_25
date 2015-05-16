@@ -49,6 +49,7 @@ GEM
       sass (>= 3.2.19)
     bootstrap-will_paginate (0.0.10)
       will_paginate
+    bootstrap_form (2.3.0)
     builder (3.2.2)
     byebug (3.4.0)
       columnize (~> 0.8)
@@ -222,6 +223,7 @@ DEPENDENCIES
   bcrypt
   bootstrap-sass
   bootstrap-will_paginate
+  bootstrap_form
   byebug (= 3.4.0)
   coffee-rails (= 4.1.0)
   faker
