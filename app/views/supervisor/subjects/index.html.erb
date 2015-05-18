@@ -1,5 +1,5 @@
-<% provide :title, 'All Courses' %>
-<h1> Subjects </h1>
+<% provide :title, t(:all_subjects) %>
+<h1>Subjects</h1>
 <%= will_paginate %>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <% @subjects.each do |subject| %>

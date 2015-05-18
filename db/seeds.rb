@@ -10,10 +10,20 @@ User.create!(name: "khanhkhanh",
              password_confirmation: "khanhkhanh",
              supervisor: false)
 
-50.times do |n|
-  Subject.create!(name: "#{n+1} name")
+48.times do |n|
+  name  = Faker::Name.name
+  email = "example-#{n+1}@tms.org"
+  password = "password"
+  User.create!(name:  name,
+              email: email,
+              password: password,
+              password_confirmation: password)
 end
 
-50.times do |n|
-  Course.create!(name: "#{n+1} name")
+9.times do |n|
+  Subject.create!(name: "Maths #{n+1}", instruction: "Instruction #{n+1}")
+end
+
+9.times do |n|
+  Course.create!(course_code: "CS0#{n+1}", name: "Computer Science 0#{n+1}")
 end

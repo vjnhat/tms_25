@@ -10,8 +10,8 @@ class Supervisor::CoursesController < ApplicationController
   def create
     @course = Course.new course_params
     if @course.save
-      flash[:success] = t(:course_created)
-      redirect_to supervisor_courses_path @course
+      flash[:success] = t(:created_course)
+      redirect_to supervisor_courses_path
     else
       render 'new'
     end
@@ -28,7 +28,7 @@ class Supervisor::CoursesController < ApplicationController
   def update
     @course = Course.find params[:id]
     if @course.update_attributes course_params
-      flash[:success] = t(:success)
+      flash[:success] = t(:updated_course)
       redirect_to supervisor_course_path @course
     else
       flash[:danger] = t(:unsuccess)
@@ -37,13 +37,13 @@ class Supervisor::CoursesController < ApplicationController
   end
 
   def destroy
-    Course.find (params[:id]).destroy
-    flash[:success] = t(:success)
+    Course.find(params[:id]).destroy
+    flash[:success] = t(:deleted_course)
     redirect_to supervisor_courses_path
   end
   
   private
   def course_params
-    params.require(:course).permit :name, :instruction, subject_ids: []
+    params.require(:course).permit :course_code, :name, :instruction, user_ids: [], subject_ids: []
   end
 end

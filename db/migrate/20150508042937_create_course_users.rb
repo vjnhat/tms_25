@@ -1,8 +1,8 @@
-class CreateUserCourses < ActiveRecord::Migration
+class CreateCourseUsers < ActiveRecord::Migration
   def change
-    create_table :user_courses do |t|
-      t.integer :user_id
+    create_table :course_users do |t|
       t.integer :course_id
+      t.integer :user_id
       t.boolean :status
 
       t.timestamps null: false
