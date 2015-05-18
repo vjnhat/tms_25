@@ -1,0 +1,12 @@
+<h1> Course information </h1>
+<%= render @course %>
+<% if current_user.supervisor? %>
+  <%= link_to t(:edit_link), edit_supervisor_course_path %>
+  <%= link_to t(:delete_link), supervisor_course_path,
+      method: :delete, data: {confirm: t(:confirm_notification)} %>
+<% end %>
+<h3> List of subjects </h3>
+<%= render @course.subjects %>
+
+<h3> List of trainees </h3>
+<%= render @course.users %>

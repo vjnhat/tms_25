@@ -39,6 +39,8 @@ en:
   confirm_notification: "Are you sure?"
   delete_link: "Delete"
   error: "error"
+  login_notice: "Please log in."
+  super_notice: "Access denied."
 
   submit: "Submit"
   welcome: "Welcome to Education App"

@@ -3,8 +3,7 @@
 <%= will_paginate %>
 <ul class="courses" >
   <% @courses.each do |course| %>
-    <%= link_to course.course_code, supervisor_course_path(course) %>
-    <br><br>
+    <p><%= render course %></p>
   <% end %>
 </ul>
 <%= will_paginate %>
