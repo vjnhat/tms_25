@@ -1,3 +1,7 @@
+User.delete_all
+Course.delete_all
+Subject.delete_all
+
 User.create!(name: "Admin",
              email: "admin@gmail.com",
              password: "admin",

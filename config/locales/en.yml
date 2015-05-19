@@ -27,7 +27,7 @@ en:
   all_users: "All users"
 
   new_subject: "New subject"
-  edit_subject: "Edit subject"
+  edit_subject: "Edit"
   subject_created: "Subject created"
   subject_updated: "Subject updated"
   subject_deleted: "Subject deleted"
@@ -56,6 +56,7 @@ en:
   new_course: "New course"
   show_courses: "All courses"
   edit_link: "Edit"
+  details_link: "Details"
   start_end_date: "Start/End date"
   success: "Success"
   fail: "Unsuccess"
