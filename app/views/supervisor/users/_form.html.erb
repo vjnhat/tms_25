@@ -1,16 +1,28 @@
-<%= form_for [:supervisor, @user] do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-control' %>
-
-  <%= f.label :email %>
-  <%= f.email_field :email, class: 'form-control' %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control' %>
-
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-  <%= f.submit t(:submit), class: "btn btn-primary" %>
+<%= form_for [:supervisor, @user], remote: true, html: {role: "form"} do |f| %>
+  <div id="error_explanation" class="bg-danger text-danger">
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= f.label :name, class: "control-label" %>
+        <%= f.text_field :name, class: "form-control first_input" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :email, class: "control-label" %>
+        <%= f.text_field :email, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password, class: "control-label" %>
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password_confirmation, class: "control-label" %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit @user.new_record? ? "Create User" : "Update User", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
 <% end %>

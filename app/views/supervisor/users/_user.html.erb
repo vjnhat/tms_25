@@ -1,6 +1,11 @@
-<li>
-  <%= gravatar_for user, size: 50 %>
-  <%= link_to user.name, supervisor_user_path(user) %>
-  | <%= link_to t(:delete_link), supervisor_user_path(user), method: :delete,
-                                data: {confirm: t(:confirm_notification)} %>
-</li>
+<tr id="user_<%= user.id %>">
+  <td><%= user.name %></td>
+  <td><%= user.email %></td>
+  <td>
+    <%= link_to t(:details_link), supervisor_user_path(user), remote: true %>
+
+    | <%= link_to t(:edit_link), edit_supervisor_user_path(user), remote: true %>
+
+    | <%= link_to t(:delete_link), supervisor_user_path(user), method: :delete, remote: true, data: {confirm: t(:confirm_notification)} %>
+  </td>
+</tr>

@@ -1,10 +1,26 @@
-<% provide :title, t(:all_users) %>
-<h1>All users</h1>
+<div class="container">
+ 
+  <h2>All Users</h2>
+  
+  <div class="well">
+    <%= link_to "New User", new_supervisor_user_path, remote: true, class: "btn btn-primary" %>
+  </div>
 
-<%= will_paginate %>
-
-<ul class="users">
-  <%= render @users %>
-</ul>
-
-<%= will_paginate %>
+  <div class="new-user"></div>
+  
+  <%= will_paginate %>
+  <table id class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody id="users">
+      <%= render @users %>
+    </tbody>
+  </table>
+ 
+  <%= render 'dialog' %>
+</div>
