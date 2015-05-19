@@ -70,3 +70,5 @@ en:
   failed_to_update: "Failed to update"
   edit_course: "Edit Course"
   add_task: "Add Task"
+
+  complete: "completed"

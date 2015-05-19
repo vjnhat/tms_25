@@ -9,3 +9,14 @@
     </section>
   </aside>
 </div>
+<div class="col-md-8">
+  <% if @user.activities.any? %>
+    <h3> Activities <%= @user.activities.count %></h3>
+    <% @user.activities.each do |activity| %>
+      <ol class="row">
+        <%= activity.action %>
+        <%= activity.find_name %>
+      </ol>
+    <% end %>
+  <% end %>
+</div>

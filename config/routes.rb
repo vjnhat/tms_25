@@ -8,14 +8,16 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
   resources :subjects, only: [:index, :show]
-  resources :courses, only: [:index, :show]
+  resources :user_tasks, only: :update
+  resources :courses, only: [:index, :show] 
 
   namespace :supervisor do
     resources :users
     resources :courses
     resources :subjects do
-      resources :tasks
+      resources :tasks      
     end
-    root  'users#index'
+    resources :user_tasks, only: [:update]       
+    root 'users#index'
   end
 end

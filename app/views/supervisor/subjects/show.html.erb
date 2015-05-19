@@ -12,4 +12,19 @@
     <%= @subject.instruction %>
   </span>
 </div>
+
 <%= render @subject.tasks %>
+
+<script type="text/javascript">
+//   $(document).ready(function() {
+//     $("button[name=mytask]").click(function() {
+//       var task_id = ($(this).attr('value'));
+//       $.ajax({
+//         url: "/supervisor/user_tasks/"+task_id,
+//         type: 'PATCH',
+//         data: 'task_id=' + task_id,
+//         async: true    
+//       });
+//     });
+//   });
+</script>

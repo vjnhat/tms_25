@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :course_users, dependent: :destroy
   has_many :courses, through: :course_users
+  has_many :activities, dependent: :destroy
 
   accepts_nested_attributes_for :course_users, allow_destroy: true
 

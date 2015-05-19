@@ -6,6 +6,8 @@ class Supervisor::UsersController < ApplicationController
   end
 
   def show
+    @user = User.find params[:id]
+    @activities = @user.activities.paginate page: params[:page]
   end
 
   def new

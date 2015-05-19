@@ -10,9 +10,9 @@
     <div class="panel-body">
       <%= task.content %>
 
-      <% user_task = user_task(current_user) %>
+      <% user_task = user_task(current_user, task) %>
 
-      <%= link_to  , class: "btn btn-primary pull-right" %>
+      <%= link_to user_task.status, user_task_path(user_task), method: :patch, class: "btn btn-primary pull-right" %>
 
       <button class="btn btn-primary pull-right" name="mytask" value="<%= task.id %>">Finished</button>
     </div>

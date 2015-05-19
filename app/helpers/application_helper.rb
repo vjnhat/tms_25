@@ -20,4 +20,8 @@ module ApplicationHelper
     link_to name, "#", 
     onclick: h("add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")"), remote: true 
   end
+
+  def user_task user, task
+    UserTask.find user: user, task: task
+  end
 end
