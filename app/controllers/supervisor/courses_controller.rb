@@ -1,4 +1,6 @@
 class Supervisor::CoursesController < ApplicationController
+  before_action :logged_in_user, :require_super
+  
   def index
     @courses = Course.paginate page: params[:page], per_page: 20
   end
@@ -11,7 +13,7 @@ class Supervisor::CoursesController < ApplicationController
     @course = Course.new course_params
     if @course.save
       flash[:success] = t(:created_course)
-      redirect_to supervisor_courses_path
+      redirect_to @course
     else
       render 'new'
     end
@@ -29,10 +31,10 @@ class Supervisor::CoursesController < ApplicationController
     @course = Course.find params[:id]
     if @course.update_attributes course_params
       flash[:success] = t(:updated_course)
-      redirect_to supervisor_course_path @course
+      redirect_to @course
     else
       flash[:danger] = t(:unsuccess)
-      redirect_to suppervisor_courses_path
+      redirect_to @course
     end
   end
 
@@ -44,6 +46,6 @@ class Supervisor::CoursesController < ApplicationController
   
   private
   def course_params
-    params.require(:course).permit :course_code, :name, :instruction, user_ids: [], subject_ids: []
+    params.require(:course).permit :course_code, :name, :instruction, subject_ids: []
   end
 end

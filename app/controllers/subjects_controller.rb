@@ -1,7 +1,5 @@
 class SubjectsController < ApplicationController
-  def index
-    @subjects = Subject.paginate page: params[:page], per_page: 20
-  end
+  before_action :logged_in_user
   
   def show
     @subject = Subject.find params[:id]
