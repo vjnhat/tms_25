@@ -15,10 +15,6 @@ class Supervisor::SubjectsController < ApplicationController
     end
   end
 
-  def show
-    @subject = Subject.find params[:id]
-  end
-
   def update
     @subject = Subject.find params[:id]
     if @subject.update_attributes subject_params

@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :user_subjects
   has_many :user_tasks
 
-  accepts_nested_attributes_for :course_users, allow_destroy: true
+  scope :not_in_a_course, ->{where("supervisor = 'f' AND id NOT IN (SELECT user_id FROM course_users)")}
 
   before_save {self.email = email.downcase}
 

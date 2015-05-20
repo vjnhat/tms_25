@@ -20,6 +20,12 @@
         <%= f.label :password_confirmation, class: "control-label" %>
         <%= f.password_field :password_confirmation, class: "form-control" %>
       </div>
+
+      <div class="form-group">
+        <%= f.label :supervisor, "Supervisor?", class: "control-label" %>
+        <%= f.check_box :supervisor, class: "control-label" %>
+      </div>
+
       <div class="form-group">
         <%= f.submit @user.new_record? ? "Create User" : "Update User", class: "btn btn-primary" %>
       </div>

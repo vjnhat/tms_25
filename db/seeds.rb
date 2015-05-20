@@ -14,6 +14,12 @@ User.create!(name: "khanhkhanh",
              password_confirmation: "khanhkhanh",
              supervisor: false)
 
+User.create!(name: "super",
+             email: "super@gmail.com",
+             password: "super",
+             password_confirmation: "super",
+             supervisor: true)
+
 48.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@tms.org"
@@ -21,7 +27,8 @@ User.create!(name: "khanhkhanh",
   User.create!(name:  name,
               email: email,
               password: password,
-              password_confirmation: password)
+              password_confirmation: password,
+              supervisor: false)
 end
 
 9.times do |n|
