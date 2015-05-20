@@ -1,0 +1,5 @@
+<% if @user_task.errors.any? %>
+  alert("somethings are wrong here!!!");
+<% else %>
+  $(".user-task-status").html("Completed");
+<% end %>
