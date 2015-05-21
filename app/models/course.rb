@@ -5,7 +5,6 @@ class Course < ActiveRecord::Base
   has_many :users, through: :course_users
 
   accepts_nested_attributes_for :course_subjects
-  accepts_nested_attributes_for :course_users, allow_destroy: true
-
+  
   validates :name, presence:true, length: {maximum: 50}
 end

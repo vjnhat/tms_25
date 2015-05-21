@@ -1,6 +1,5 @@
 class Supervisor::UsersController < ApplicationController
   before_action :set_user, except: [:index, :new, :create]
-  before_action :logged_in_user, :require_super
 
   def index
     @users = User.paginate page: params[:page], per_page: 10
@@ -57,6 +56,6 @@ class Supervisor::UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit :name, :email, :password,
-                                 :password_confirmation
+                                 :password_confirmation, :supervisor
   end
 end

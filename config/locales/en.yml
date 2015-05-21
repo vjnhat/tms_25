@@ -56,6 +56,7 @@ en:
   
   success: "Success"
   fail: "Unsuccess"
+  update_failed: "Failed to update"
   danger_message: "Invalid email/password combination"
   confirm_notification: "Are you sure?"
   login_notice: "Please log in."
@@ -73,5 +74,9 @@ en:
   failed_to_update: "Failed to update"
   edit_course: "Edit Course"
   add_task: "Add Task"
+
   completed: "completed"
   finish: "Finish"
+
+  assign_trainees: "Assign trainees"
+  edit_add_subjects_link: "Edit and add subjects"
