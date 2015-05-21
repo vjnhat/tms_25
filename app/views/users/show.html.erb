@@ -14,6 +14,7 @@
           <h4><%= us.subject.name %></h4>
           <span class="label label-primary"><%= us.status %></span>
           <%= us.created_at %>
+          <%= render us.subject.tasks %>
         </li>
       </div>
     <% end %>
